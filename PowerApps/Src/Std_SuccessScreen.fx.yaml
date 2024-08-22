@@ -1,0 +1,41 @@
+Std_SuccessScreen As screen:
+
+    Image7 As image:
+        Height: =362
+        Image: ='WhatsApp Image 2024-08-05 at 7.27.40 PM'
+        Width: =527
+        X: =60
+        Y: =410
+        ZIndex: =1
+
+    Label4 As label:
+        Align: =Align.Center
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Bold
+        Height: =100
+        Size: =30
+        Text: |
+            ="Hello " & varTxtFirstName & " " & " " & "you can Track Your attentence here ..!! 🤗 "
+        Width: =560
+        X: =43
+        Y: =162
+        ZIndex: =2
+
+    Arrow1 As arrow.backArrow:
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =86
+        OnSelect: =Navigate(Screen5)
+        Width: =100
+        X: =96
+        Y: =930
+        ZIndex: =3
+
+    Icon3_2 As icon.Home:
+        Height: =75
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Screen2)
+        Width: =84
+        X: =496
+        Y: =946
+        ZIndex: =4
+

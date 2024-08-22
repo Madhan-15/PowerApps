@@ -1,0 +1,180 @@
+Screen5 As screen:
+    BackgroundImage: =
+    ImagePosition: =ImagePosition.Fill
+
+    Label1_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        Size: =38
+        Text: ="Students Login Portal"
+        Width: =594
+        X: =22
+        Y: =159
+        ZIndex: =1
+
+    Label2 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =20
+        Text: |-
+            ="Enter your Sin No :"
+        Width: =310
+        X: =22
+        Y: =454
+        ZIndex: =2
+
+    Label2_1 As label:
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =20
+        Text: |-
+            ="Enter Password :"
+        Width: =310
+        X: =58
+        Y: =565
+        ZIndex: =3
+
+    SIN As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 208, 225, 1)
+        BorderThickness: =5
+        Default: =
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        HintText: ="enter sin no"
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =25
+        Width: =282
+        X: =332
+        Y: =454
+        ZIndex: =6
+
+    Password As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 208, 225, 1)
+        BorderThickness: =5
+        Default: =
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        HintText: ="enter password"
+        Mode: =TextMode.Password
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =25
+        Width: =293
+        X: =332
+        Y: =565
+        ZIndex: =7
+
+    btnLogin As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        Font: =Font.Lato
+        Height: =67
+        OnSelect: |-
+            =Set(varTxtFirstName,TxtFirstName.Text);
+            Set(varSIN, SIN.Text);
+            Set(varPassword, Password.Text);
+            
+            // SIN number validation regex
+            Set(isValidSIN, !IsBlank(varSIN) && IsMatch(varSIN, "^[Ee][0-9]{2}(CS|AI|IT|BM|AG|EC|ME|cs|ai|it|bm|ag|ec|me)[0-9]{3}$"));
+            
+            // Password validation (for simplicity, we just check if it is not empty)
+            Set(isValidPassword, !IsBlank(varPassword));
+            
+            If(
+                isValidSIN && isValidPassword,
+                Navigate(Std_SuccessScreen),
+                Notify(
+                    If(
+                        !isValidSIN,
+                        "Invalid SIN Number. It must be in the format eg : E21CS028 or e21cs028",
+                        "Password cannot be empty"
+                        
+                    ),
+            
+                    NotificationType.Error
+                );
+            
+                Reset(Password);
+                Reset(SIN);
+                Reset(TxtFirstName)
+                
+            )
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =20
+        Text: ="LOGIN"
+        Width: =222
+        X: =184
+        Y: =730
+        ZIndex: =10
+
+    Label2_2 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =20
+        Text: |-
+            ="Enter your Name :"
+        Width: =310
+        X: =22
+        Y: =343
+        ZIndex: =11
+
+    TxtFirstName As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 208, 225, 1)
+        BorderThickness: =5
+        Default: =
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        HintText: ="enter name"
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =25
+        Width: =282
+        X: =337
+        Y: =343
+        ZIndex: =12
+
+    Arrow1_1 As arrow.backArrow:
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =86
+        OnSelect: =Navigate(Screen4)
+        Width: =100
+        X: =84
+        Y: =946
+        ZIndex: =13
+
+    Icon3 As icon.Home:
+        Height: =75
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Screen2)
+        Width: =84
+        X: =496
+        Y: =946
+        ZIndex: =14
+

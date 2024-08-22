@@ -1,0 +1,32 @@
+Mngt_successscreen As screen:
+
+    Image7_1 As image:
+        Height: =362
+        Image: ='WhatsApp Image 2024-08-05 at 7.27.41 PM'
+        Width: =527
+        X: =60
+        Y: =410
+        ZIndex: =1
+
+    Label4_2 As label:
+        Align: =Align.Center
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Bold
+        Height: =150
+        Size: =30
+        Text: |
+            ="Hello " & "Management" & " " & " " & "you can Track Students attentence here ..!! 🤗 "
+        Width: =560
+        X: =43
+        Y: =112
+        ZIndex: =2
+
+    Arrow1_4 As arrow.backArrow:
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =86
+        OnSelect: =Navigate(Screen5)
+        Width: =100
+        X: =270
+        Y: =920
+        ZIndex: =3
+

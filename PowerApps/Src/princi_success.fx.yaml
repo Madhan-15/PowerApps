@@ -1,0 +1,41 @@
+princi_success As screen:
+
+    Label4_3 As label:
+        Align: =Align.Center
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Bold
+        Height: =150
+        Size: =30
+        Text: |
+            ="Hello " & varTxtFirstName & " " & "sir" & " " & "you can Track Students attentence here ..!! 🤗 "
+        Width: =560
+        X: =43
+        Y: =112
+        ZIndex: =2
+
+    Arrow1_6 As arrow.backArrow:
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =86
+        OnSelect: =Navigate(Screen5)
+        Width: =100
+        X: =84
+        Y: =934
+        ZIndex: =3
+
+    Image8 As image:
+        Height: =396
+        Image: ='WhatsApp Image 2024-08-05 at 7.27.41 PM (1)_1'
+        Width: =554
+        X: =49
+        Y: =433
+        ZIndex: =4
+
+    Icon3_3 As icon.Home:
+        Height: =75
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Screen2)
+        Width: =84
+        X: =496
+        Y: =946
+        ZIndex: =5
+

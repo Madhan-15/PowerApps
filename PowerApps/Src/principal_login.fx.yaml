@@ -1,0 +1,131 @@
+principal_login As screen:
+
+    Label1_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        Size: =38
+        Text: ="Principal Login Portal"
+        Width: =594
+        X: =23
+        Y: =275
+        ZIndex: =1
+
+    Label2_7 As label:
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =20
+        Text: |-
+            ="Enter Password :"
+        Width: =310
+        X: =58
+        Y: =565
+        ZIndex: =3
+
+    Password_2 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 208, 225, 1)
+        BorderThickness: =5
+        Default: =
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        HintText: ="enter password"
+        Mode: =TextMode.Password
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =25
+        Width: =293
+        X: =332
+        Y: =565
+        ZIndex: =5
+
+    btnLogin_2 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        Font: =Font.Lato
+        Height: =67
+        OnSelect: |-
+            =Set(varTxtFirstName,TxtFirstName_2.Text);
+            Set(varPassword, Password_2.Text);
+            
+            
+            // Password validation (for simplicity, we just check if it is not empty)
+            Set(isValidPassword, !IsBlank(varPassword));
+            
+            If(
+                isValidSIN && isValidPassword,
+                Navigate(princi_success),
+                Notify(
+                    If(
+                        !isValidPassword,
+                        "username or Password block cannot be empty"
+                        
+                    ),
+            
+                    NotificationType.Error
+                );
+            
+                Reset(Password_2);
+                Reset(TxtFirstName_2)
+                
+            )
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =20
+        Text: ="LOGIN"
+        Width: =222
+        X: =184
+        Y: =730
+        ZIndex: =6
+
+    Label2_8 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =20
+        Text: |-
+            ="Enter your Name :"
+        Width: =310
+        X: =28
+        Y: =444
+        ZIndex: =7
+
+    TxtFirstName_2 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 208, 225, 1)
+        BorderThickness: =5
+        Default: =
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        HintText: ="enter name"
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =25
+        Width: =282
+        X: =343
+        Y: =444
+        ZIndex: =8
+
+    Arrow1_5 As arrow.backArrow:
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =86
+        OnSelect: =Navigate(Screen4)
+        Width: =100
+        X: =270
+        Y: =920
+        ZIndex: =9
+
